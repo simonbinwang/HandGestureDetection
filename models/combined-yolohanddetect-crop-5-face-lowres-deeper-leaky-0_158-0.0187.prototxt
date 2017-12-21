@@ -1,0 +1,598 @@
+name: "pytorch"
+input: "data"
+input_dim: 1
+input_dim: 3
+input_dim: 240
+input_dim: 320
+
+layer {
+    name: "ConvNdBackward1"
+    type: "Convolution"
+    bottom: "data"
+    top: "ConvNdBackward1"
+    convolution_param {
+        num_output: 10
+        pad_h: 1
+        pad_w: 1
+        kernel_h: 3
+        kernel_w: 3
+        stride: 1
+        group: 1
+        dilation: 1
+    }
+}
+layer {
+    name: "LeakyReLUBackward2"
+    type: "ReLU"
+    bottom: "ConvNdBackward1"
+    top: "LeakyReLUBackward2"
+    relu_param {
+        negative_slope: 0.01
+    }
+}
+layer {
+    name: "ConvNdBackward3"
+    type: "Convolution"
+    bottom: "LeakyReLUBackward2"
+    top: "ConvNdBackward3"
+    convolution_param {
+        num_output: 10
+        pad_h: 1
+        pad_w: 1
+        kernel_h: 3
+        kernel_w: 3
+        stride: 2
+        group: 10
+        dilation: 1
+    }
+}
+layer {
+    name: "LeakyReLUBackward4"
+    type: "ReLU"
+    bottom: "ConvNdBackward3"
+    top: "LeakyReLUBackward4"
+    relu_param {
+        negative_slope: 0.01
+    }
+}
+layer {
+    name: "ConvNdBackward5"
+    type: "Convolution"
+    bottom: "LeakyReLUBackward4"
+    top: "ConvNdBackward5"
+    convolution_param {
+        num_output: 10
+        pad_h: 0
+        pad_w: 0
+        kernel_h: 1
+        kernel_w: 1
+        stride: 1
+        group: 1
+        dilation: 1
+    }
+}
+layer {
+    name: "LeakyReLUBackward6"
+    type: "ReLU"
+    bottom: "ConvNdBackward5"
+    top: "LeakyReLUBackward6"
+    relu_param {
+        negative_slope: 0.01
+    }
+}
+layer {
+    name: "ConvNdBackward7"
+    type: "Convolution"
+    bottom: "LeakyReLUBackward6"
+    top: "ConvNdBackward7"
+    convolution_param {
+        num_output: 10
+        pad_h: 1
+        pad_w: 1
+        kernel_h: 3
+        kernel_w: 3
+        stride: 1
+        group: 10
+        dilation: 1
+    }
+}
+layer {
+    name: "LeakyReLUBackward8"
+    type: "ReLU"
+    bottom: "ConvNdBackward7"
+    top: "LeakyReLUBackward8"
+    relu_param {
+        negative_slope: 0.01
+    }
+}
+layer {
+    name: "ConvNdBackward9"
+    type: "Convolution"
+    bottom: "LeakyReLUBackward8"
+    top: "ConvNdBackward9"
+    convolution_param {
+        num_output: 10
+        pad_h: 0
+        pad_w: 0
+        kernel_h: 1
+        kernel_w: 1
+        stride: 1
+        group: 1
+        dilation: 1
+    }
+}
+layer {
+    name: "LeakyReLUBackward10"
+    type: "ReLU"
+    bottom: "ConvNdBackward9"
+    top: "LeakyReLUBackward10"
+    relu_param {
+        negative_slope: 0.01
+    }
+}
+layer {
+    name: "ConvNdBackward11"
+    type: "Convolution"
+    bottom: "LeakyReLUBackward10"
+    top: "ConvNdBackward11"
+    convolution_param {
+        num_output: 10
+        pad_h: 1
+        pad_w: 1
+        kernel_h: 3
+        kernel_w: 3
+        stride: 2
+        group: 10
+        dilation: 1
+    }
+}
+layer {
+    name: "LeakyReLUBackward12"
+    type: "ReLU"
+    bottom: "ConvNdBackward11"
+    top: "LeakyReLUBackward12"
+    relu_param {
+        negative_slope: 0.01
+    }
+}
+layer {
+    name: "ConvNdBackward13"
+    type: "Convolution"
+    bottom: "LeakyReLUBackward12"
+    top: "ConvNdBackward13"
+    convolution_param {
+        num_output: 20
+        pad_h: 0
+        pad_w: 0
+        kernel_h: 1
+        kernel_w: 1
+        stride: 1
+        group: 1
+        dilation: 1
+    }
+}
+layer {
+    name: "LeakyReLUBackward14"
+    type: "ReLU"
+    bottom: "ConvNdBackward13"
+    top: "LeakyReLUBackward14"
+    relu_param {
+        negative_slope: 0.01
+    }
+}
+layer {
+    name: "ConvNdBackward15"
+    type: "Convolution"
+    bottom: "LeakyReLUBackward14"
+    top: "ConvNdBackward15"
+    convolution_param {
+        num_output: 20
+        pad_h: 1
+        pad_w: 1
+        kernel_h: 3
+        kernel_w: 3
+        stride: 1
+        group: 20
+        dilation: 1
+    }
+}
+layer {
+    name: "LeakyReLUBackward16"
+    type: "ReLU"
+    bottom: "ConvNdBackward15"
+    top: "LeakyReLUBackward16"
+    relu_param {
+        negative_slope: 0.01
+    }
+}
+layer {
+    name: "ConvNdBackward17"
+    type: "Convolution"
+    bottom: "LeakyReLUBackward16"
+    top: "ConvNdBackward17"
+    convolution_param {
+        num_output: 20
+        pad_h: 0
+        pad_w: 0
+        kernel_h: 1
+        kernel_w: 1
+        stride: 1
+        group: 1
+        dilation: 1
+    }
+}
+layer {
+    name: "LeakyReLUBackward18"
+    type: "ReLU"
+    bottom: "ConvNdBackward17"
+    top: "LeakyReLUBackward18"
+    relu_param {
+        negative_slope: 0.01
+    }
+}
+layer {
+    name: "ConvNdBackward19"
+    type: "Convolution"
+    bottom: "LeakyReLUBackward18"
+    top: "ConvNdBackward19"
+    convolution_param {
+        num_output: 20
+        pad_h: 1
+        pad_w: 1
+        kernel_h: 3
+        kernel_w: 3
+        stride: 2
+        group: 20
+        dilation: 1
+    }
+}
+layer {
+    name: "LeakyReLUBackward20"
+    type: "ReLU"
+    bottom: "ConvNdBackward19"
+    top: "LeakyReLUBackward20"
+    relu_param {
+        negative_slope: 0.01
+    }
+}
+layer {
+    name: "ConvNdBackward21"
+    type: "Convolution"
+    bottom: "LeakyReLUBackward20"
+    top: "ConvNdBackward21"
+    convolution_param {
+        num_output: 40
+        pad_h: 0
+        pad_w: 0
+        kernel_h: 1
+        kernel_w: 1
+        stride: 1
+        group: 1
+        dilation: 1
+    }
+}
+layer {
+    name: "LeakyReLUBackward22"
+    type: "ReLU"
+    bottom: "ConvNdBackward21"
+    top: "LeakyReLUBackward22"
+    relu_param {
+        negative_slope: 0.01
+    }
+}
+layer {
+    name: "ConvNdBackward23"
+    type: "Convolution"
+    bottom: "LeakyReLUBackward22"
+    top: "ConvNdBackward23"
+    convolution_param {
+        num_output: 40
+        pad_h: 1
+        pad_w: 1
+        kernel_h: 3
+        kernel_w: 3
+        stride: 1
+        group: 40
+        dilation: 1
+    }
+}
+layer {
+    name: "LeakyReLUBackward24"
+    type: "ReLU"
+    bottom: "ConvNdBackward23"
+    top: "LeakyReLUBackward24"
+    relu_param {
+        negative_slope: 0.01
+    }
+}
+layer {
+    name: "ConvNdBackward25"
+    type: "Convolution"
+    bottom: "LeakyReLUBackward24"
+    top: "ConvNdBackward25"
+    convolution_param {
+        num_output: 40
+        pad_h: 0
+        pad_w: 0
+        kernel_h: 1
+        kernel_w: 1
+        stride: 1
+        group: 1
+        dilation: 1
+    }
+}
+layer {
+    name: "LeakyReLUBackward26"
+    type: "ReLU"
+    bottom: "ConvNdBackward25"
+    top: "LeakyReLUBackward26"
+    relu_param {
+        negative_slope: 0.01
+    }
+}
+layer {
+    name: "ConvNdBackward27"
+    type: "Convolution"
+    bottom: "LeakyReLUBackward26"
+    top: "ConvNdBackward27"
+    convolution_param {
+        num_output: 40
+        pad_h: 1
+        pad_w: 1
+        kernel_h: 3
+        kernel_w: 3
+        stride: 2
+        group: 40
+        dilation: 1
+    }
+}
+layer {
+    name: "LeakyReLUBackward28"
+    type: "ReLU"
+    bottom: "ConvNdBackward27"
+    top: "LeakyReLUBackward28"
+    relu_param {
+        negative_slope: 0.01
+    }
+}
+layer {
+    name: "ConvNdBackward29"
+    type: "Convolution"
+    bottom: "LeakyReLUBackward28"
+    top: "ConvNdBackward29"
+    convolution_param {
+        num_output: 80
+        pad_h: 0
+        pad_w: 0
+        kernel_h: 1
+        kernel_w: 1
+        stride: 1
+        group: 1
+        dilation: 1
+    }
+}
+layer {
+    name: "LeakyReLUBackward30"
+    type: "ReLU"
+    bottom: "ConvNdBackward29"
+    top: "LeakyReLUBackward30"
+    relu_param {
+        negative_slope: 0.01
+    }
+}
+layer {
+    name: "ConvNdBackward31"
+    type: "Convolution"
+    bottom: "LeakyReLUBackward30"
+    top: "ConvNdBackward31"
+    convolution_param {
+        num_output: 80
+        pad_h: 1
+        pad_w: 1
+        kernel_h: 3
+        kernel_w: 3
+        stride: 1
+        group: 80
+        dilation: 1
+    }
+}
+layer {
+    name: "LeakyReLUBackward32"
+    type: "ReLU"
+    bottom: "ConvNdBackward31"
+    top: "LeakyReLUBackward32"
+    relu_param {
+        negative_slope: 0.01
+    }
+}
+layer {
+    name: "ConvNdBackward33"
+    type: "Convolution"
+    bottom: "LeakyReLUBackward32"
+    top: "ConvNdBackward33"
+    convolution_param {
+        num_output: 80
+        pad_h: 0
+        pad_w: 0
+        kernel_h: 1
+        kernel_w: 1
+        stride: 1
+        group: 1
+        dilation: 1
+    }
+}
+layer {
+    name: "LeakyReLUBackward34"
+    type: "ReLU"
+    bottom: "ConvNdBackward33"
+    top: "LeakyReLUBackward34"
+    relu_param {
+        negative_slope: 0.01
+    }
+}
+layer {
+    name: "ConvNdBackward35"
+    type: "Convolution"
+    bottom: "LeakyReLUBackward34"
+    top: "ConvNdBackward35"
+    convolution_param {
+        num_output: 80
+        pad_h: 1
+        pad_w: 1
+        kernel_h: 3
+        kernel_w: 3
+        stride: 1
+        group: 80
+        dilation: 1
+    }
+}
+layer {
+    name: "LeakyReLUBackward36"
+    type: "ReLU"
+    bottom: "ConvNdBackward35"
+    top: "LeakyReLUBackward36"
+    relu_param {
+        negative_slope: 0.01
+    }
+}
+layer {
+    name: "ConvNdBackward37"
+    type: "Convolution"
+    bottom: "LeakyReLUBackward36"
+    top: "ConvNdBackward37"
+    convolution_param {
+        num_output: 80
+        pad_h: 0
+        pad_w: 0
+        kernel_h: 1
+        kernel_w: 1
+        stride: 1
+        group: 1
+        dilation: 1
+    }
+}
+layer {
+    name: "LeakyReLUBackward38"
+    type: "ReLU"
+    bottom: "ConvNdBackward37"
+    top: "LeakyReLUBackward38"
+    relu_param {
+        negative_slope: 0.01
+    }
+}
+layer {
+    name: "ConvNdBackward39"
+    type: "Convolution"
+    bottom: "LeakyReLUBackward38"
+    top: "ConvNdBackward39"
+    convolution_param {
+        num_output: 80
+        pad_h: 1
+        pad_w: 1
+        kernel_h: 3
+        kernel_w: 3
+        stride: 1
+        group: 80
+        dilation: 1
+    }
+}
+layer {
+    name: "LeakyReLUBackward40"
+    type: "ReLU"
+    bottom: "ConvNdBackward39"
+    top: "LeakyReLUBackward40"
+    relu_param {
+        negative_slope: 0.01
+    }
+}
+layer {
+    name: "ConvNdBackward41"
+    type: "Convolution"
+    bottom: "LeakyReLUBackward40"
+    top: "ConvNdBackward41"
+    convolution_param {
+        num_output: 80
+        pad_h: 0
+        pad_w: 0
+        kernel_h: 1
+        kernel_w: 1
+        stride: 1
+        group: 1
+        dilation: 1
+    }
+}
+layer {
+    name: "LeakyReLUBackward42"
+    type: "ReLU"
+    bottom: "ConvNdBackward41"
+    top: "LeakyReLUBackward42"
+    relu_param {
+        negative_slope: 0.01
+    }
+}
+layer {
+    name: "ConvNdBackward43"
+    type: "Convolution"
+    bottom: "LeakyReLUBackward42"
+    top: "ConvNdBackward43"
+    convolution_param {
+        num_output: 80
+        pad_h: 1
+        pad_w: 1
+        kernel_h: 3
+        kernel_w: 3
+        stride: 1
+        group: 1
+        dilation: 1
+    }
+}
+layer {
+    name: "LeakyReLUBackward44"
+    type: "ReLU"
+    bottom: "ConvNdBackward43"
+    top: "LeakyReLUBackward44"
+    relu_param {
+        negative_slope: 0.01
+    }
+}
+layer {
+    name: "ConvNdBackward45"
+    type: "Convolution"
+    bottom: "LeakyReLUBackward44"
+    top: "ConvNdBackward45"
+    convolution_param {
+        num_output: 80
+        pad_h: 1
+        pad_w: 1
+        kernel_h: 3
+        kernel_w: 3
+        stride: 1
+        group: 1
+        dilation: 1
+    }
+}
+layer {
+    name: "LeakyReLUBackward46"
+    type: "ReLU"
+    bottom: "ConvNdBackward45"
+    top: "LeakyReLUBackward46"
+    relu_param {
+        negative_slope: 0.01
+    }
+}
+layer {
+    name: "ConvNdBackward47"
+    type: "Convolution"
+    bottom: "LeakyReLUBackward46"
+    top: "ConvNdBackward47"
+    convolution_param {
+        num_output: 11
+        pad_h: 0
+        pad_w: 0
+        kernel_h: 1
+        kernel_w: 1
+        stride: 1
+        group: 1
+        dilation: 1
+    }
+}
